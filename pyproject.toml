@@ -1,0 +1,48 @@
+[project]
+name = "ai-ml-genai"
+version = "0.1.0"
+description = "AI/ML GenAI workspace: RAG, agents, MCP, chatbots, and assistants"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-classic>=1.0.0",
+    "langchain-community>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-text-splitters>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    "pypdf>=5.0.0",
+    "python-dotenv>=1.0.0",
+    "streamlit>=1.40.0",
+    "mcp>=1.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+]
+
+[project.optional-dependencies]
+local-llm = [
+    "llama-cpp-python>=0.3.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+    "fpdf2>=2.8.0",
+    "pillow>=10.0.0",
+]
+minigpt-tensorflow = [
+    "tensorflow>=2.16.0",
+]
+minigpt-finetune = [
+    "peft>=0.10.0",
+    "trl>=0.8.0",
+    "bitsandbytes>=0.43.0",
+    "accelerate>=0.28.0",
+    "datasets>=2.18.0",
+    "sentencepiece>=0.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

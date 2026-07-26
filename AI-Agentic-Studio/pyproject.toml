@@ -1,0 +1,78 @@
+[project]
+name = "ai-agentic-studio"
+version = "1.0.0"
+description = "Production-shaped Generative + Agentic AI playground: advanced RAG, stateful agents, MCP, guardrails, observability, evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "python-dotenv>=1.0.0",
+    "numpy>=1.26.0",
+    "pypdf>=5.0.0",
+]
+
+[project.optional-dependencies]
+# Local embeddings + cross-encoder reranking
+retrieval = [
+    "sentence-transformers>=3.0.0",
+    "faiss-cpu>=1.8.0",
+]
+# Hosted model providers
+providers = [
+    "openai>=1.40.0",
+    "anthropic>=0.34.0",
+    "google-genai>=0.3.0",
+]
+# Local GGUF inference
+local-llm = [
+    "llama-cpp-python>=0.3.0",
+]
+# Streamlit playground UI
+ui = [
+    "streamlit>=1.40.0",
+    "pillow>=10.0.0",
+]
+# Model Context Protocol server/client
+mcp = [
+    "mcp>=1.0.0",
+]
+# Optional external tracing backends
+tracing = [
+    "opentelemetry-sdk>=1.27.0",
+    "opentelemetry-exporter-otlp>=1.27.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.6.0",
+]
+# Everything
+all = [
+    "ai-agentic-studio[retrieval,providers,ui,mcp,dev]",
+]
+
+[project.scripts]
+studio = "agentic_studio.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agentic_studio"]

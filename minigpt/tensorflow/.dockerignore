@@ -1,0 +1,28 @@
+# Keep the build context small.
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Trained artifacts (regenerate / mount via volume)
+checkpoints/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+
+# Docs not needed at runtime
+*.md
+diagrams/

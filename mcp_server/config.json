@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ai-ml-genai": {
+      "command": "uv",
+      "args": ["run", "python", "mcp_server/server.py"],
+      "cwd": "."
+    }
+  }
+}

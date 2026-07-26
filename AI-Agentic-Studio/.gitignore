@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+
+# Generated artifacts
+var/
+index/
+data/raw/*
+!data/raw/.gitkeep
+models/*
+!models/.gitkeep
+reports/*
+!reports/.gitkeep
+*.sqlite3
+*.jsonl
+!data/eval/*.jsonl

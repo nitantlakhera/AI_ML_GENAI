@@ -1,0 +1,29 @@
+# Keep the build context small and avoid copying host-only artifacts.
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Trained artifacts (regenerate inside the container / mount via volume)
+checkpoints/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docs are not needed at runtime (optional to include)
+*.md

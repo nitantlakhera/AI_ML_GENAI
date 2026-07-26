@@ -1,0 +1,5 @@
+{"question": "What problem does reciprocal rank fusion solve?", "reference_answer": "It merges rankings from several retrievers without needing their scores to be on a comparable scale.", "tags": ["retrieval"], "id": "rrf"}
+{"question": "Why combine BM25 with dense retrieval?", "reference_answer": "BM25 matches exact terms and identifiers that dense embeddings miss, so together they cover both lexical and semantic matches.", "tags": ["retrieval"], "id": "bm25"}
+{"question": "What does a cross-encoder reranker improve?", "reference_answer": "It improves precision at the top of the ranking by scoring the query and document together.", "tags": ["retrieval"], "id": "rerank"}
+{"question": "When should an agent pause for human approval?", "reference_answer": "Before running a tool with side effects, such as writing files, executing code, or calling a paid or destructive API.", "tags": ["agents"], "id": "hitl"}
+{"question": "What is the airspeed velocity of an unladen swallow?", "tags": ["out-of-scope", "refusal"], "id": "absent"}

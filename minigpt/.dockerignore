@@ -1,0 +1,29 @@
+# Build context is the repo root (see pytorch/ and tensorflow/ docker-compose.yml).
+# Keep the context small.
+
+# Python caches
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Trained artifacts (mounted via volume instead)
+**/checkpoints/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+
+# Docs + rendered images are not needed at runtime
+**/*.md
+**/diagrams/

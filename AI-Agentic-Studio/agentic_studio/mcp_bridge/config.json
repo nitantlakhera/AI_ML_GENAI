@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ai-agentic-studio": {
+      "command": "uv",
+      "args": ["run", "python", "-m", "agentic_studio.mcp_bridge.server"],
+      "env": {
+        "STUDIO_LLM_PROVIDERS": "echo"
+      },
+      "prefix": ""
+    }
+  },
+  "_comment": "Point Cursor or another MCP client at this file. To let studio agents call an external MCP server instead, add it here and run: studio mcp-register --config agentic_studio/mcp_bridge/config.json"
+}

@@ -1,0 +1,26 @@
+# MiniGPT (PyTorch) docker-compose
+# --------------------------------
+# Build context is the REPO ROOT (..) so the shared common/ folder is included.
+# checkpoints/ is mounted so the trained model persists on the host.
+#
+#   docker compose run --rm train
+#   docker compose run --rm chat
+
+services:
+  train:
+    build:
+      context: ..
+      dockerfile: pytorch/Dockerfile
+    command: python train.py
+    volumes:
+      - ./checkpoints:/app/pytorch/checkpoints
+
+  chat:
+    build:
+      context: ..
+      dockerfile: pytorch/Dockerfile
+    command: python chat.py
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./checkpoints:/app/pytorch/checkpoints

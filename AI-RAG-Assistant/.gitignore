@@ -1,0 +1,32 @@
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Vector database (generated)
+vector_db/
+
+# Processed data
+data/processed/
+
+# Local model weights
+models/*.gguf
+models/*.bin
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

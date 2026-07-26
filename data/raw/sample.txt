@@ -1,0 +1,3 @@
+This is a sample document for testing RAG ingestion on the AI ML GenAI project.
+The project supports chatbots, AI assistants, RAG pipelines, agents, and MCP servers.
+Retrieval augmented generation helps answer questions from your own documents.

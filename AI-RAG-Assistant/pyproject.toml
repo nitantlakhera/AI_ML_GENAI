@@ -1,0 +1,30 @@
+[project]
+name = "ai-rag-assistant"
+version = "0.1.0"
+description = "Generic RAG chatbot and AI assistant with FAISS vector store"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-text-splitters>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    "pypdf>=5.0.0",
+    "python-dotenv>=1.0.0",
+    "llama-cpp-python>=0.3.0",
+    "streamlit>=1.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
